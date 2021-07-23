@@ -2,9 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
-.container {
+#logo {
+  padding-top: 70px;
+  padding-bottom: 50px;
 }
 
 .column-menu {
@@ -13,7 +16,34 @@
   height: 901px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.column-items ul {
+.column-menu p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 13px;
+}
+
+.column-menu ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+ul {
+  list-style: none;
+}
+
+.icon-settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: 90px;
+}
+.icon-settings i {
+  margin: 12px;
 }
