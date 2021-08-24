@@ -6,6 +6,33 @@ const quantNaves = document.querySelector('#naves');
 preencherQuantidade();
 preencherTabela();
 
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+async function drawChart() {
+  const response = await swapiGet('vehicles/ ');
+  const vehiclesArray = response.data.results
+  console.log(vehiclesArray)
+
+  const dataArray = [];
+  dataArray.push(['Veículos', 'Passageiros']);
+  vehiclesArray.forEach(vehicle => {
+  dataArray.push([vehicle.name, Number(vehicle.passengers)]);
+  })
+
+  var data = google.visualization.arrayToDataTable(dataArray);
+
+  var options = {
+    title: 'Maiores veículos',
+    legend: 'none'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+  chart.draw(data, options);
+}
+
+
 function preencherQuantidade() {
   Promise.all([
     swapiGet('people/'),
