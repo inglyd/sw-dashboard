@@ -1,95 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dashboard Star Wars</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/1cd18c96fa.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="column-menu">
-        <img src="assets/logo.png" alt="Logo do Star Wars" id="logo" />
-        <div class="column-items">
-          <ul>
-            <li>
-              <img src="assets/dashboard.svg" alt="" />
-              <p>Dashboard</p>
-            </li>
-            <li>
-              <img src="assets/personagens.svg" alt="" />
-              <p> Personagens</p>
-            </li>
-            <li>
-              <img src="assets/planetas.svg" alt="" />
-              <p>Planetas e luas</p>
-            </li>
-            <li>
-              <img src="assets/nave.svg" alt="" />
-              <p>Naves espaciais</p>
-            </li>
-          </ul>
-        </div>
-        <div class="icon-settings">
-          <i class="fas fa-cog"></i>
-          <p>Configurações</p>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Dashboard Star Wars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/1cd18c96fa.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="column-menu">
+      <img src="assets/logo.png" alt="Logo do Star Wars" id="logo" />
+      <div class="column-items">
+        <ul>
+          <li>
+            <img src="assets/dashboard.svg" alt="" />
+            <p>Dashboard</p>
+          </li>
+          <li>
+            <img src="assets/personagens.svg" alt="" />
+            <p> Personagens</p>
+          </li>
+          <li>
+            <img src="assets/planetas.svg" alt="" />
+            <p>Planetas e luas</p>
+          </li>
+          <li>
+            <img src="assets/nave.svg" alt="" />
+            <p>Naves espaciais</p>
+          </li>
+        </ul>
       </div>
-      <div class="content">
-        <div class="cards">
-          <div class="card">
-            <div class="card-content">
-              <p>Personagens</p>
-              <span id='personagens'></span>
-            </div>
-            <div class="card-img">
-              <img src="assets/personagens-black.svg" alt="" />
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-content">
-              <p>Luas</p>
-              <span id='luas'></span>
-            </div>
-            <div class="card-img">
-              <img src="assets/luas-black.svg" alt="" />
-            </div>
-          </div>
-            
-            <div class="card">
-              <div class="card-content">
-                <p>Planetas</p>
-                <span id='planetas'></span>
-              </div>
-              <div class="card-img">
-                <img src="assets/planetas-black.svg" alt="" />
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-content">
-                <p>Naves</p>
-                <span id='naves'></span>
-              </div>
-              <div class="card-img">
-                <img src="assets/nave-black.svg" alt="" />
-              </div>
-          </div>
-          </div>
-        </div>
+      <div class="icon-settings">
+        <i class="fas fa-cog"></i>
+        <p>Configurações</p>
       </div>
     </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="index.js"></script>
-    </body>
+    <div class="content">
+      <div class="cards">
+        <div class="card">
+          <div class="card-content">
+            <p>Personagens</p>
+            <span id='personagens'></span>
+          </div>
+          <div class="card-img">
+            <img src="assets/personagens-black.svg" alt="" />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <p>Luas</p>
+            <span id='luas'></span>
+          </div>
+          <div class="card-img">
+            <img src="assets/luas-black.svg" alt="" />
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <p>Planetas</p>
+            <span id='planetas'></span>
+          </div>
+          <div class="card-img">
+            <img src="assets/planetas-black.svg" alt="" />
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <p>Naves</p>
+            <span id='naves'></span>
+          </div>
+          <div class="card-img">
+            <img src="assets/nave-black.svg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="table">
+        <h5>Últimos filmes</h5>
+        <p class="subtitle-table">Saiba os últimos lançamentos da marca</p>
+        <table id="films-table">
+          <thead>
+            <tr>
+              <th>Titulo</th>
+              <th>Estreia</th>
+              <th>Diretor</th>
+              <th>Episódio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
